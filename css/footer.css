@@ -1,31 +1,16 @@
 .ide-status-bar {
-    height: var(--status-height);
-    background-color: var(--accent-blue);
-    color: #ffffff;
+    height: var(--h-status);
+    background-color: var(--accent);
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
     font-size: 11px;
-    flex-shrink: 0;
-    z-index: 10;
 }
 
 .ide-status-bar__left,
 .ide-status-bar__right {
     display: flex;
-    align-items: center;
     gap: 12px;
-}
-
-.ide-status-item {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    height: 100%;
-}
-
-.ide-status-item--accent {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 0 6px;
 }
