@@ -1,23 +1,45 @@
-:root {
-    --bg-dark: #1e1e1e;
-    --accent: #007acc;
-    --text: #cccccc;
-}
-
-.ide-root {
+@import 'variables.css';
+@import 'header.css';
+@import 'main.css';
+@import 'footer.css';
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
 }
 
-.ide-hidden-label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
+html,
+body {
+    height: 100%;
+}
+
+.ide-page {
+    font-family: var(--font-ui);
+    background-color: var(--bg-main);
+    color: var(--text);
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+}
+
+.ide-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.ide-page__skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--accent);
+    color: #fff;
+    padding: 5px;
+    z-index: 100;
+}
+
+.ide-page__skip-link:focus {
+    top: 0;
+}
+
+.visually-hidden {
+    display: none;
 }
