@@ -1,0 +1,19 @@
+.ide-panel--editor {
+    grid-area: editor;
+    display: flex;
+    flex-direction: column;
+}
+
+.ide-textarea {
+    flex: 1;
+    width: 100%;
+    background-color: var(--bg-main);
+    color: #9cdcfe;
+    border: none;
+    padding: 12px;
+    font-family: var(--font-code);
+    font-size: 14px;
+    line-height: 1.5;
+    resize: none;
+    outline: none;
+}

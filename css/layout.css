@@ -1,0 +1,25 @@
+.ide-page {
+    font-family: var(--font-ui);
+    background-color: var(--bg-main);
+    color: var(--text);
+}
+
+.ide-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.ide-workspace {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.ide-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 4px 1fr;
+    grid-template-rows: 1fr 180px;
+    grid-template-areas: "editor resizer preview" "terminal terminal terminal";
+}

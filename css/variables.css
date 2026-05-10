@@ -5,8 +5,10 @@
     --bg-activity: #333333;
     --bg-panel: #2d2d2d;
     --accent: #007acc;
+    --accent-hover: #1f8ad2;
     --success: #28a745;
     --error: #f48771;
+    --warning: #cca700;
     --text: #cccccc;
     --text-muted: #858585;
     --border: #3c3c3c;
@@ -15,4 +17,5 @@
     --h-header: 35px;
     --h-status: 22px;
     --w-activity: 48px;
+    --radius: 2px;
 }

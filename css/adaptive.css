@@ -1,0 +1,20 @@
+@media (max-width: 1024px) {
+    .ide-main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 120px;
+        grid-template-areas: "editor" "preview" "terminal";
+    }
+    .ide-resizer {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .ide-sidebar {
+        display: none;
+    }
+    .ide-header__meta,
+    .ide-header__title {
+        display: none;
+    }
+}

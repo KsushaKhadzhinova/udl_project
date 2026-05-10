@@ -1,0 +1,24 @@
+.ide-panel--preview {
+    grid-area: preview;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.ide-canvas {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ide-canvas__img {
+    max-width: 90%;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+}
+
+.ide-canvas__caption {
+    font-size: 11px;
+    color: #333;
+    margin-top: 5px;
+}

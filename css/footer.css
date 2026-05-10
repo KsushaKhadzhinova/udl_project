@@ -13,6 +13,11 @@
 .ide-status-bar__left,
 .ide-status-bar__right {
     display: flex;
-    align-items: center;
     gap: 12px;
+}
+
+.ide-status-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }

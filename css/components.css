@@ -1,0 +1,41 @@
+.ide-toolbar {
+    display: flex;
+    list-style: none;
+    gap: 6px;
+}
+
+.ide-btn {
+    height: 24px;
+    padding: 0 12px;
+    font-size: 11px;
+    border: none;
+    border-radius: var(--radius);
+    color: #fff;
+    transition: filter 0.2s;
+}
+
+.ide-btn:hover {
+    filter: brightness(1.2);
+}
+
+.ide-btn--save {
+    background-color: var(--bg-activity);
+}
+
+.ide-btn--run {
+    background-color: var(--success);
+}
+
+.ide-btn--ai {
+    background-color: #6f42c1;
+}
+
+.ide-resizer {
+    grid-area: resizer;
+    background-color: var(--border);
+    cursor: col-resize;
+}
+
+.ide-resizer:hover {
+    background-color: var(--accent);
+}
