@@ -4,98 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Visual DSL Modeler — CASE-средство визуального моделирования систем">
-    <title>Visual DSL Modeler | IDE</title>
+    <meta name="description" content="VisualDSL Studio — профессиональная среда визуального моделирования систем на базе собственного DSL">
+    <title>VisualDSL Studio | IDE</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="ide-root">
+<body class="ide-page">
 
-    <a href="#editor" class="ide-root__skip-link">Перейти к редактору</a>
+    <a href="#editor" class="ide-page__skip-link">Перейти к редактору кода</a>
 
     <div class="ide-container" itemscope itemtype="https://schema.org/SoftwareApplication">
-        <meta itemprop="applicationCategory" content="MultimediaApplication">
+        <meta itemprop="applicationCategory" content="DesignApplication">
         <meta itemprop="operatingSystem" content="Windows, Linux, MacOS">
 
         <header class="ide-header" itemscope itemtype="https://schema.org/Organization">
             <div class="ide-header__logo">
-                <img src="images/logo.svg" alt="Visual DSL Modeler" itemprop="logo">
+                <img src="images/logo.svg" alt="VisualDSL Studio Logo" itemprop="logo" class="ide-header__logo-img">
                 <h1 class="ide-header__title" itemprop="name">VisualDSL Studio</h1>
             </div>
 
             <nav class="ide-header__nav" aria-label="Панель инструментов">
                 <ul class="ide-toolbar" role="toolbar">
-                    <li class="ide-toolbar__item"><button class="ide-btn ide-toolbar__btn--save" type="button">Save</button></li>
-                    <li class="ide-toolbar__item"><button class="ide-btn ide-toolbar__btn--run" type="button">Run</button></li>
-                    <li class="ide-toolbar__item"><button class="ide-btn ide-toolbar__btn--ai" type="button">AI Fix</button></li>
+                    <li class="ide-toolbar__item"><button class="ide-btn ide-btn--save" type="button" aria-label="Сохранить проект">Save</button></li>
+                    <li class="ide-toolbar__item"><button class="ide-btn ide-btn--run" type="button" aria-label="Запустить рендеринг диаграммы">Run</button></li>
+                    <li class="ide-toolbar__item"><button class="ide-btn ide-btn--ai" type="button" aria-label="ИИ-помощник: исправить ошибки">AI Fix</button></li>
                 </ul>
             </nav>
 
-            <div class="ide-header__meta" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <div class="ide-header__breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
                 <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="#"><span itemprop="name">projects</span></a>
                 <meta itemprop="position" content="1">
                 </span>
-                <span class="ide-header__current-file">/ system_v1.udl</span>
+                <span class="ide-header__file-info">/ system_v1.udl</span>
             </div>
         </header>
 
         <div class="ide-workspace">
-            <nav class="ide-activity-bar" aria-label="Активности">
-                <button class="ide-activity-bar__item ide-activity-bar__item--active" aria-label="Проводник"></button>
-                <button class="ide-activity-bar__item" aria-label="Поиск"></button>
-                <button class="ide-activity-bar__item" aria-label="Версии"></button>
+            <nav class="ide-activity-bar" aria-label="Панель переключения режимов">
+                <button class="ide-activity-bar__item ide-activity-bar__item--active" aria-label="Проводник файлов"></button>
+                <button class="ide-activity-bar__item" aria-label="Поиск по проекту"></button>
+                <button class="ide-activity-bar__item" aria-label="История версий и Diff"></button>
             </nav>
 
             <aside class="ide-sidebar">
                 <section class="ide-sidebar__section">
                     <h2 class="ide-sidebar__title">EXPLORER</h2>
                     <ul class="ide-tree">
-                        <li class="ide-tree__item ide-tree__item--file">system_v1.udl</li>
+                        <li class="ide-tree__item ide-tree__item--file active">system_v1.udl</li>
                         <li class="ide-tree__item ide-tree__item--file">schema.json</li>
+                        <li class="ide-tree__item ide-tree__item--file">readme.md</li>
                     </ul>
                 </section>
             </aside>
 
             <main class="ide-main" id="editor">
-                <section class="ide-panel ide-panel--code" aria-label="Редактор кода">
-                    <h3 class="ide-panel__header">EDITOR</h3>
-                    <div class="ide-panel__body">
-                        <label for="udl-input" class="ide-hidden-label">Код модели</label>
-                        <textarea id="udl-input" class="ide-textarea" spellcheck="false">node A "System"</textarea>
+                <section class="ide-panel ide-panel--editor" aria-label="Редактор кода">
+                    <h3 class="ide-panel__title">UDL EDITOR</h3>
+                    <div class="ide-panel__content" itemprop="softwareHelp" itemscope itemtype="https://schema.org/CreativeWork">
+                        <label for="udl-textarea" class="visually-hidden">Поле ввода кода диаграммы</label>
+                        <textarea id="udl-textarea" class="ide-textarea" spellcheck="false">node A "System Start"
+node B "System End"
+edge A -> B "Data Flow"</textarea>
                     </div>
                 </section>
 
-                <div class="ide-resizer" role="separator"></div>
+                <div class="ide-resizer" role="separator" aria-label="Изменить размер"></div>
 
-                <section class="ide-panel ide-panel--preview" aria-label="Визуализация">
-                    <h3 class="ide-panel__header">PREVIEW</h3>
-                    <div class="ide-panel__body ide-canvas">
-                        <figure class="ide-canvas__figure">
-                            <img src="images/placeholder.png" alt="Сгенерированная диаграмма" class="ide-canvas__img">
-                            <figcaption class="ide-canvas__caption">Визуальная модель процесса</figcaption>
+                <section class="ide-panel ide-panel--preview" aria-label="Область визуализации">
+                    <h3 class="ide-panel__title">PREVIEW</h3>
+                    <div class="ide-panel__content ide-canvas">
+                        <figure class="ide-canvas__container">
+                            <img src="images/placeholder.png" alt="Сгенерированная модель системы" class="ide-canvas__img">
+                            <figcaption class="ide-canvas__caption">Визуализация текущей DSL модели</figcaption>
                         </figure>
                     </div>
                 </section>
 
-                <section class="ide-terminal" aria-label="Консоль">
+                <section class="ide-terminal" aria-label="Консоль вывода">
                     <div class="ide-terminal__tabs">
-                        <button class="ide-terminal__tab ide-terminal__tab--active">Terminal</button>
+                        <button class="ide-terminal__tab active">Terminal</button>
                         <button class="ide-terminal__tab">Problems</button>
                     </div>
-                    <div class="ide-terminal__content">
-                        <pre class="ide-terminal__text">Ready</pre>
+                    <div class="ide-terminal__body">
+                        <pre class="ide-terminal__pre">VisualDSL Engine: Ready...
+Waiting for input...</pre>
                     </div>
                 </section>
             </main>
         </div>
 
-        <section class="ide-help" itemscope itemtype="https://schema.org/FAQPage">
-            <h2 class="ide-help__title">Справка</h2>
-            <article itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                <h3 itemprop="name">Что такое UDL?</h3>
+        <section class="ide-documentation" itemscope itemtype="https://schema.org/FAQPage">
+            <h2 class="ide-documentation__title">Справка по системе</h2>
+            <article class="ide-faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                <h3 itemprop="name" class="ide-faq-item__q">Как экспортировать диаграмму?</h3>
                 <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                    <div itemprop="text">Universal Diagram Language для быстрой отрисовки графов.</div>
+                    <div itemprop="text" class="ide-faq-item__a">Используйте меню Файл -> Экспорт в PNG/SVG.</div>
                 </div>
             </article>
         </section>
@@ -112,7 +116,7 @@
             <div class="ide-status-bar__right">
                 <span class="ide-status-item">UTF-8</span>
                 <span class="ide-status-item">Ln 1, Col 1</span>
-                <span class="ide-status-item ide-status-item--lang">UDL</span>
+                <span class="ide-status-item ide-status-item--lang">UDL Language</span>
             </div>
         </footer>
     </div>
