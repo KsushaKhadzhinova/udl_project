@@ -1,0 +1,244 @@
+/* UDL Editor - CSS Grid Layout System */
+/* Following ЛР №4 requirements for grid-based layout */
+
+/* Main Application Grid - 3 Column Industrial Layout */
+.udl-app-grid {
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'activity sidebar main'
+    'activity sidebar main'
+    'footer footer footer';
+  grid-template-columns: 48px 260px 1fr;
+  grid-template-rows: 35px 1fr auto 22px;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--bg-base);
+}
+
+/* Grid Areas - Semantic Mapping */
+.udl-header {
+  grid-area: header;
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4);
+  z-index: var(--z-base);
+}
+
+.udl-activity-bar {
+  grid-area: activity;
+  background: var(--bg-activity-bar);
+  border-right: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2) 0;
+  z-index: var(--z-base);
+}
+
+.udl-sidebar {
+  grid-area: sidebar;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: var(--z-base);
+}
+
+.udl-main {
+  grid-area: main;
+  background: var(--bg-base);
+  display: grid;
+  grid-template-areas:
+    'editor canvas'
+    'terminal terminal';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.udl-statusbar {
+  grid-area: footer;
+  background: var(--bg-statusbar);
+  color: var(--text-inverse);
+  border-top: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-3);
+  font-size: var(--font-size-sm);
+  z-index: var(--z-base);
+}
+
+/* Main Content Split - Editor & Canvas */
+.udl-editor-pane {
+  grid-area: editor;
+  background: var(--bg-base);
+  border-right: 1px solid var(--border-default);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.udl-canvas-pane {
+  grid-area: canvas;
+  background: var(--bg-base);
+  overflow: hidden;
+  position: relative;
+}
+
+.udl-terminal-pane {
+  grid-area: terminal;
+  background: var(--bg-terminal);
+  border-top: 1px solid var(--border-default);
+  min-height: 0;
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tablet Layout - 768px */
+@media (max-width: 1023px) {
+  .udl-app-grid {
+    grid-template-areas:
+      'header header'
+      'activity main'
+      'activity main'
+      'footer footer';
+    grid-template-columns: 48px 1fr;
+  }
+
+  .udl-sidebar {
+    position: fixed;
+    left: 48px;
+    top: 35px;
+    bottom: 22px;
+    width: 260px;
+    z-index: var(--z-dropdown);
+    transform: translateX(-100%);
+    transition: transform var(--transition-slow);
+  }
+
+  .udl-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .udl-main {
+    grid-template-areas:
+      'editor'
+      'canvas'
+      'terminal';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr auto;
+  }
+
+  .udl-editor-pane {
+    border-right: none;
+    border-bottom: 1px solid var(--border-default);
+  }
+}
+
+/* Mobile Layout - 375px */
+@media (max-width: 767px) {
+  .udl-app-grid {
+    grid-template-areas:
+      'header'
+      'main'
+      'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px 1fr 22px;
+  }
+
+  .udl-activity-bar {
+    display: none;
+  }
+
+  .udl-sidebar {
+    left: 0;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .udl-main {
+    grid-template-areas:
+      'editor'
+      'terminal';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  .udl-canvas-pane {
+    display: none;
+  }
+
+  .udl-canvas-pane.is-active {
+    display: block;
+  }
+
+  .udl-editor-pane.is-hidden {
+    display: none;
+  }
+}
+
+/* Industrial Sharp Edges - 2px Border Radius */
+.udl-sharp {
+  border-radius: var(--radius-sharp);
+}
+
+/* Utility Classes */
+.udl-full-height {
+  height: 100%;
+}
+
+.udl-flex {
+  display: flex;
+}
+
+.udl-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.udl-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.udl-overflow-hidden {
+  overflow: hidden;
+}
+
+.udl-overflow-auto {
+  overflow: auto;
+}
+
+/* Focus States - Accessibility (ЛР №3) */
+.udl-focusable:focus {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.udl-focusable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Transition Utilities */
+.udl-transition {
+  transition: all var(--transition-base);
+}
+
+.udl-transition-fast {
+  transition: all var(--transition-fast);
+}
+
+.udl-transition-slow {
+  transition: all var(--transition-slow);
+}
