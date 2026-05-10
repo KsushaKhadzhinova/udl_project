@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UDL Editor — CASE-средство визуального моделирования на основе собственного DSL">
+    <title>UDL Editor | Проект: system_v1</title>
+</head>
+<body>
+
+    <header>
+        <h1>UDL Editor</h1>
+        <nav aria-label="Панель инструментов">
+            <ul>
+                <li><button type="button">Save</button></li>
+                <li><button type="button">Run</button></li>
+                <li><button type="button">AI Fix</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="app-workspace">
+        
+        <nav aria-label="Боковая панель активности">
+            <ul>
+                <li><a href="#explorer">Проводник</a></li>
+                <li><a href="#search">Поиск</a></li>
+                <li><a href="#history">История версий</a></li>
+                <li><a href="#docs">Документация</a></li>
+            </ul>
+        </nav>
+
+        <aside id="explorer">
+            <h2>Проводник</h2>
+            <ul>
+                <li><strong>system_v1.udl</strong></li>
+                <li>diagram_logic.udl</li>
+                <li>readme.txt</li>
+            </ul>
+        </aside>
+
+        <main>
+            <section aria-label="Редактор кода UDL">
+                <h2>Код диаграммы</h2>
+                <form>
+                    <label for="udl-input">Введите код в формате UDL:</label>
+                    <br>
+                    <textarea id="udl-input" rows="20" cols="60" placeholder="node A 'Start' ..."></textarea>
+                </form>
+            </section>
+
+            <section aria-label="Предпросмотр диаграммы">
+                <h2>Визуализация</h2>
+                <article>
+                    <p>[Здесь будет отображаться сгенерированная диаграмма]</p>
+                    <figure>
+                        <img src="" alt="Место для будущей диаграммы">
+                        <figcaption>Предварительный просмотр текущей модели</figcaption>
+                    </figure>
+                </article>
+            </section>
+
+            <section id="terminal" aria-label="Консоль и ошибки">
+                <h3>Терминал</h3>
+                <ul>
+                    <li>Terminal</li>
+                    <li>Problems</li>
+                </ul>
+                <pre>
+> Ожидание ввода кода...
+> Ошибок не обнаружено.
+                </pre>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>
+            <span>Статус: OK</span> | 
+            <span>Язык: UDL</span> | 
+            <span>Кодировка: UTF-8</span> | 
+            <span>Профиль: xju2005</span>
+        </p>
+    </footer>
+
+</body>
+</html>
