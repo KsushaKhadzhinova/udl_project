@@ -1,106 +1,62 @@
-# Visual DSL Modeler (UDL Editor) 🚀
+# VisualDSL Studio (UDL Editor) 🚀
 
-**Универсальное CASE-средство для визуального моделирования процессов и структур на основе собственного предметно-ориентированного языка (DSL).**
+**VisualDSL Studio** — современное CASE-средство, реализующее концепцию *Diagram-as-Code*.
 
-Проект разрабатывается в рамках цикла лабораторных работ по дисциплине "Инструментальные средства веб-разработки" (ИТИВП).
+## 📌 Текущий статус проекта
 
----
+**✅ Завершена Лабораторная работа №3**  
+Полная семантическая разметка интерфейса с поддержкой доступности и SEO.
 
-## 📝 Концепция проекта
+### Что нового:
+- **Семантика HTML5:** Переписан весь скелет на смысловые теги
+- **Архитектура БЭМ:** База для стилизации (ЛР №4)
+- **Microdata (Schema.org):** `SoftwareApplication`, `Organization`, `FAQ`
+- **Accessibility:** ARIA-атрибуты, Skip-links
 
-Основная идея системы — реализация концепции **Diagram-as-Code**. Пользователь описывает логику системы (нотации IDEF0, DFD, Сети Петри, UML) с помощью текстового кода в реальном времени, а система автоматически генерирует интерактивный граф.
-
-### Основные возможности (MVP):
-
-- Редактор кода с подсветкой синтаксиса UDL.
-- Двусторонняя синхронизация (Bi-sync): изменение кода обновляет диаграмму и наоборот.
-- Интеграция с ИИ-ассистентом для генерации и исправления кода моделей.
-- Хранение связей в графовой базе данных.
-
----
-
-## 🛠 Технологический стек
-
-### Frontend:
-
-- **HTML5:** Семантическая разметка и микроразметка Schema.org.
-- **CSS3:** Адаптивная верстка (Grid, Flexbox), методология БЭМ.
-- **JavaScript:** Реализация интерактивности и асинхронных запросов.
-- **React:** Компонентная архитектура (планируется в ЛР №7).
-- **React Flow / Monaco Editor:** Библиотеки для визуализации графов и редактирования кода.
-
-### Backend:
-
-- **Python 3.11:** Основной язык серверной логики.
-- **FastAPI:** Асинхронный веб-фреймворк для API.
-- **Lark:** Библиотека для создания парсера и обработки грамматики языка UDL.
-- **Neo4j:** Графовая база данных для хранения иерархических структур моделей.
-
-### Инструменты автоматизации:
-
-- **Node.js & npm:** Управление фронтенд-зависимостями.
-- **Git & GitHub:** Система контроля версий.
-- **Prettier:** Автоматическое форматирование кода.
-
----
-
-## 📂 Структура проекта
-
-```text
+## 📂 Структура фронтенда (ЛР 3)
 udl_project/
-├── backend/            # Серверная часть на FastAPI
-│   ├── venv/           # Виртуальное окружение Python
-│   ├── main.py         # Точка входа API
-│   ├── parser_engine.py# Логика транслятора UDL -> Graph
-│   └── grammar.lark    # Грамматика языка UDL
-├── frontend/           # Интерфейс приложения
-│   ├── index.html      # Главная страница (семантика)
-│   ├── css/            # Стили (стилистика VS Code)
-│   └── js/             # Клиентская логика
-├── docs/               # Отчеты по лабораторным работам
-├── designs/            # Ссылка на Figma и прототипы
-├── .gitignore          # Исключения для Git
-└── package.json        # Конфигурация npm
-```
+├── index.html # Семантический каркас
+├── css/
+│ └── style.css # CSS-переменные + reset
+├── js/
+│ └── script.js # Заготовка интерактивности
+└── README.md # Документация
 
----
-
-## 🚀 Быстрый старт
-
-### 1. Настройка бэкенда
-
-```powershell
-cd backend
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-### 2. Настройка фронтенда
-
-```powershell
-npm install
-# Запуск через Live Server в VS Code
-```
-
----
-
-## 🎨 Проектирование
-
-- Макет в Figma: [Ссылка на проект в Figma](https://www.figma.com/file/your_link_here)
-- Цветовая схема: Industrial Dark (VS Code Theme)
-
----
+## 🛠 Технологии
+| Технология | Применение |
+|------------|------------|
+| HTML5 | Semantic, ARIA, Microdata |
+| CSS3 | BEM-методология |
+| Node.js/npm | Управление зависимостями |
+| Git | Ветвление `feature/semantic-markup` |
 
 ## 👤 Автор
-
-- Студент: Хаджинова Ксения  
-- Email: [xju2005@gmail.com](mailto:xju2005@gmail.com)  
-- GitHub: [KsushaKhadzhinova](https://github.com/KsushaKhadzhinova)  
+**Ксения Хаджинова**  
+[GitHub: @KsushaKhadzhinova](https://github.com/KsushaKhadzhinova)  
+📧 [xju2005@gmail.com](mailto:xju2005@gmail.com)
 
 ---
 
-## 📄 Лицензия
+## 🔧 Команды PowerShell (для сдачи ЛР №3)
 
-MIT
+```powershell
+# 1. Переход в папку проекта
+cd E:\udl_project
+
+# 2. Создание ветки для ЛР №3
+git checkout -b feature/semantic-markup
+
+# 3. Добавление всех файлов
+git add .
+
+# 4. Коммит изменений
+git commit -m "feat: semantic HTML5 markup + microdata + accessibility (Lab 3)"
+
+# 5. Отправка ветки на GitHub
+git push origin feature/semantic-markup
+
+# 6. (Опционально) Слияние в main
+git checkout main
+git merge feature/semantic-markup
+git push origin main
+```
