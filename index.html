@@ -10,27 +10,22 @@
 </head>
 
 <body class="ide-page">
-
     <a href="#editor" class="ide-page__skip-link">Перейти к редактору</a>
-
     <div class="ide-container" itemscope itemtype="https://schema.org/SoftwareApplication">
         <meta itemprop="applicationCategory" content="DesignApplication">
         <meta itemprop="operatingSystem" content="Windows, Linux, MacOS">
-
         <header class="ide-header" itemscope itemtype="https://schema.org/Organization">
             <div class="ide-header__logo">
-                <img src="images/logo.svg" alt="VisualDSL Logo" itemprop="logo" class="ide-header__logo-img">
+                <img src="images/logo.svg" alt="VisualDSL Studio Logo" itemprop="logo" class="ide-header__logo-img">
                 <h1 class="ide-header__title" itemprop="name">VisualDSL Studio</h1>
             </div>
-
             <nav class="ide-header__nav" aria-label="Панель инструментов">
                 <ul class="ide-toolbar" role="toolbar">
                     <li class="ide-toolbar__item"><button class="ide-btn ide-btn--save" type="button" aria-label="Сохранить проект">Save</button></li>
                     <li class="ide-toolbar__item"><button class="ide-btn ide-btn--run" type="button" aria-label="Запустить рендеринг">Run</button></li>
-                    <li class="ide-toolbar__item"><button class="ide-btn ide-btn--ai" type="button" aria-label="ИИ-помощник">AI Fix</button></li>
+                    <li class="ide-toolbar__item"><button class="ide-btn ide-btn--ai" type="button" aria-label="AI ассистент">AI Fix</button></li>
                 </ul>
             </nav>
-
             <div class="ide-header__meta" itemscope itemtype="https://schema.org/BreadcrumbList">
                 <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="#"><span itemprop="name">projects</span></a>
@@ -39,14 +34,12 @@
                 <span class="ide-header__file-info">/ system_v1.udl</span>
             </div>
         </header>
-
         <div class="ide-workspace">
-            <nav class="ide-activity-bar" aria-label="Активности">
+            <nav class="ide-activity-bar" aria-label="Боковая панель">
                 <button class="ide-activity-bar__item ide-activity-bar__item--active" aria-label="Файлы"></button>
                 <button class="ide-activity-bar__item" aria-label="Поиск"></button>
-                <button class="ide-activity-bar__item" aria-label="Гит"></button>
+                <button class="ide-activity-bar__item" aria-label="Версии"></button>
             </nav>
-
             <aside class="ide-sidebar">
                 <section class="ide-sidebar__section">
                     <h2 class="ide-sidebar__title">EXPLORER</h2>
@@ -57,52 +50,46 @@
                     </ul>
                 </section>
             </aside>
-
             <main class="ide-main" id="editor">
                 <section class="ide-panel ide-panel--editor" aria-label="Редактор кода">
                     <h3 class="ide-panel__title">EDITOR</h3>
                     <div class="ide-panel__content" itemprop="softwareHelp" itemscope itemtype="https://schema.org/CreativeWork">
                         <label for="udl-textarea" class="visually-hidden">Поле ввода UDL</label>
-                        <textarea id="udl-textarea" class="ide-textarea" spellcheck="false">node A "Start"
-node B "End"
+                        <textarea id="udl-textarea" class="ide-textarea" spellcheck="false">node A "System Start"
+node B "System End"
 edge A -> B</textarea>
                     </div>
                 </section>
-
                 <div class="ide-resizer" role="separator" aria-label="Изменить размер"></div>
-
                 <section class="ide-panel ide-panel--preview" aria-label="Визуализация">
                     <h3 class="ide-panel__title">PREVIEW</h3>
                     <div class="ide-panel__content ide-canvas">
                         <figure class="ide-canvas__container">
-                            <img src="images/placeholder.png" alt="Сгенерированная диаграмма" class="ide-canvas__img">
-                            <figcaption class="ide-canvas__caption">Визуальная модель UDL</figcaption>
+                            <img src="images/placeholder.png" alt="Сгенерированная модель" class="ide-canvas__img">
+                            <figcaption class="ide-canvas__caption">Модель на базе UDL</figcaption>
                         </figure>
                     </div>
                 </section>
-
-                <section class="ide-terminal" aria-label="Консоль">
+                <section class="ide-terminal" aria-label="Терминал">
                     <div class="ide-terminal__tabs">
                         <button class="ide-terminal__tab active">Terminal</button>
                         <button class="ide-terminal__tab">Problems</button>
                     </div>
                     <div class="ide-terminal__body">
-                        <pre class="ide-terminal__pre">Waiting for input...</pre>
+                        <pre class="ide-terminal__pre">VisualDSL Engine Ready...</pre>
                     </div>
                 </section>
             </main>
         </div>
-
-        <section class="ide-documentation" itemscope itemtype="https://schema.org/FAQPage">
-            <h2 class="ide-documentation__title">Documentation</h2>
-            <article class="ide-faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                <h3 itemprop="name">Как создать узел?</h3>
+        <section class="ide-docs-section" itemscope itemtype="https://schema.org/FAQPage">
+            <h2 class="visually-hidden">Справка</h2>
+            <article itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Как работать с UDL?</h3>
                 <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                    <div itemprop="text">Используйте синтаксис node ID "Label".</div>
+                    <div itemprop="text">Используйте синтаксис node для создания объектов.</div>
                 </div>
             </article>
         </section>
-
         <footer class="ide-status-bar" role="contentinfo">
             <div class="ide-status-bar__left">
                 <span class="ide-status-item" role="status">main*</span>
@@ -115,11 +102,10 @@ edge A -> B</textarea>
             <div class="ide-status-bar__right">
                 <span class="ide-status-item">UTF-8</span>
                 <span class="ide-status-item">Ln 1, Col 1</span>
-                <span class="ide-status-item ide-status-item--accent">UDL</span>
+                <span class="ide-status-item ide-status-item--accent">UDL Language</span>
             </div>
         </footer>
     </div>
-
     <script src="js/script.js"></script>
 </body>
 

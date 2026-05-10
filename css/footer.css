@@ -1,0 +1,18 @@
+.ide-status-bar {
+    height: var(--h-status);
+    background-color: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.ide-status-bar__left,
+.ide-status-bar__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}

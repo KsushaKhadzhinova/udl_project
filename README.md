@@ -1,18 +1,22 @@
 # VisualDSL Studio 🚀
 
-Профессиональное CASE-средство для визуального моделирования систем на базе собственного предметно-ориентированного языка (DSL).
+Профессиональное CASE-средство для визуального моделирования систем Diagram-as-Code.
 
-## Стек технологий
-- **HTML5**: Семантическая разметка, Microdata (Schema.org), ARIA.
-- **CSS3**: Grid, Flexbox, Переменные, БЭМ, Mobile First.
-- **Node.js**: Управление зависимостями (lodash, nodemon).
-- **Git**: Система контроля версий.
+## Окружение (ЛР 2)
+- Node.js & npm (управление зависимостями)
+- Git & GitHub (система контроля версий)
+- Prettier (форматирование)
 
-## Структура проекта
-- `index.html` — семантический каркас.
-- `css/` — модульные стили.
-- `design/` — токены и ссылки на Figma.
-- `docs/` — отчеты по лабораторным работам.
+## Разметка (ЛР 3)
+- HTML5 Semantic Tags
+- Microdata: SoftwareApplication, Organization, FAQPage, Offer
+- ARIA accessibility support
+
+## Стили (ЛР 4)
+- CSS Grid & Flexbox
+- Mobile First responsive design
+- BEM methodology
+- CSS Variables for themes
 
 ## Автор
 Ксения Хаджинова (@KsushaKhadzhinova)
