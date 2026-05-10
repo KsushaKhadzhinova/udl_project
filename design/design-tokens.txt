@@ -1,0 +1,10 @@
+COLORS:
+--bg-main: #1E1E1E
+--bg-sidebar: #252526
+--accent-blue: #007ACC
+--success-green: #28A745
+--border: #3C3C3C
+
+TYPOGRAPHY:
+Interface Font: Inter, 12px
+Editor Font: Fira Code, 14px

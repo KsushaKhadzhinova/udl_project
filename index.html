@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visual DSL Modeler — профессиональная среда проектирования диаграмм на основе кода.">
+    <title>Visual DSL Modeler | Редактор системных моделей</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="ide">
+
+    <a href="#main-editor" class="ide__skip-link">Перейти к основному содержимому</a>
+
+    <div class="ide__wrapper" itemscope itemtype="https://schema.org/SoftwareApplication">
+        <meta itemprop="applicationCategory" content="DeveloperApplication">
+        <meta itemprop="operatingSystem" content="Windows, Linux, MacOS">
+
+        <header class="header" role="banner" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+            <div class="header__logo">
+                <img src="images/logo.svg" alt="Логотип Visual DSL Modeler" class="header__logo-img" itemprop="logo">
+                <span itemprop="name">VisualDSL Studio</span>
+            </div>
+
+            <nav class="header__nav" aria-label="Основные инструменты">
+                <ul class="toolbar" role="toolbar">
+                    <li class="toolbar__item"><button class="btn btn--primary" type="button" aria-label="Сохранить проект">Save</button></li>
+                    <li class="toolbar__item"><button class="btn btn--success" type="button" aria-label="Запустить рендеринг">Run</button></li>
+                    <li class="toolbar__item"><button class="btn btn--accent" type="button" aria-label="Исправить с помощью ИИ">AI Fix</button></li>
+                </ul>
+            </nav>
+
+            <div class="header__breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a itemprop="item" href="/"><span itemprop="name">projects</span></a>
+                <meta itemprop="position" content="1">
+                </span>
+                <span class="header__file-name" itemprop="name">/ system_v1.udl</span>
+            </div>
+        </header>
+
+        <div class="ide__workspace">
+            <nav class="activity-bar" aria-label="Боковая панель навигации">
+                <ul class="activity-bar__list">
+                    <li class="activity-bar__item active"><button aria-label="Проводник файлов"><img src="images/icon-files.svg" alt="Иконка файлов"></button></li>
+                    <li class="activity-bar__item"><button aria-label="Поиск по проекту"><img src="images/icon-search.svg" alt="Иконка поиска"></button></li>
+                    <li class="activity-bar__item"><button aria-label="Интеграция с GitHub"><img src="images/icon-git.svg" alt="Иконка Git"></button></li>
+                </ul>
+            </nav>
+
+            <aside class="sidebar" id="explorer">
+                <section class="sidebar__section">
+                    <h2 class="sidebar__title">EXPLORER</h2>
+                    <ul class="file-tree">
+                        <li class="file-tree__item file-tree__item--active">system_v1.udl</li>
+                        <li class="file-tree__item">logic.udl</li>
+                        <li class="file-tree__item">readme.md</li>
+                    </ul>
+                </section>
+            </aside>
+
+            <main class="main-content" id="main-editor">
+                <section class="panel panel--editor" aria-label="Редактор кода">
+                    <h3 class="panel__header">EDITOR: UDL</h3>
+                    <div class="panel__body" itemprop="softwareHelp" itemscope itemtype="https://schema.org/CreativeWork">
+                        <label for="code-input" class="visually-hidden">Поле ввода DSL кода</label>
+                        <textarea id="code-input" class="editor-textarea" spellcheck="false" placeholder="node A 'Start'...">node A "Система"
+edge A -> B "Данные"</textarea>
+                    </div>
+                </section>
+
+                <div class="resizer" role="separator" aria-label="Изменить размер панелей"></div>
+
+                <section class="panel panel--preview" aria-label="Предпросмотр диаграммы">
+                    <h3 class="panel__header">VISUAL PREVIEW</h3>
+                    <div class="panel__body canvas" id="canvas-root">
+                        <figure class="canvas__figure">
+                            <div class="canvas__placeholder">
+                                <img src="images/preview-stub.png" alt="Предварительный просмотр сгенерированной диаграммы">
+                            </div>
+                            <figcaption class="canvas__caption">Визуализация текущей модели UDL</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="terminal" aria-label="Консоль разработчика">
+                    <nav class="terminal__tabs">
+                        <button class="terminal__tab active">Terminal</button>
+                        <button class="terminal__tab">Problems</button>
+                    </nav>
+                    <div class="terminal__output">
+                        <pre><code>> Initializing Graph Engine... OK</code></pre>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <section class="docs-preview" id="docs" itemscope itemtype="https://schema.org/FAQPage">
+            <h2 class="docs-preview__title">Справка по UDL</h2>
+            <article class="faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Как создать узел?</h3>
+                <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                    <div itemprop="text">Используйте ключевое слово node и уникальный ID.</div>
+                </div>
+            </article>
+        </section>
+
+        <footer class="status-bar" role="contentinfo">
+            <div class="status-bar__left">
+                <span class="status-item" role="status"><img src="images/icon-branch.svg" alt=""> main*</span>
+                <span class="status-item" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <meta itemprop="price" content="0">
+                    <meta itemprop="priceCurrency" content="USD">
+                    Free Version
+                </span>
+            </div>
+            <div class="status-bar__right">
+                <span class="status-item">Ln 1, Col 1</span>
+                <span class="status-item">Spaces: 4</span>
+                <span class="status-item" itemprop="encodingFormat">UTF-8</span>
+                <span class="status-item">UDL Language</span>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
