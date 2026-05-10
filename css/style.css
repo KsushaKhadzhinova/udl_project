@@ -1,23 +1,52 @@
-:root {
-    --bg-dark: #1e1e1e;
-    --accent: #007acc;
-    --text: #cccccc;
+@import 'variables.css';
+@import 'header.css';
+@import 'main.css';
+@import 'footer.css';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 .ide-root {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
+    font-family: var(--font-ui);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-.ide-hidden-label {
+.ide-page__skip-link {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    top: -100px;
+    left: 10px;
+    background-color: var(--accent-blue);
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 1000;
+    text-decoration: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.ide-page__skip-link:focus {
+    top: 0;
+}
+
+.ide-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.ide-documentation,
+.visually-hidden {
+    display: none;
 }

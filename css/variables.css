@@ -1,0 +1,34 @@
+:root {
+    --bg-main: #1e1e1e;
+    --bg-sidebar: #252526;
+    --bg-header: #323233;
+    --bg-activity: #333333;
+    --bg-panel-header: #2d2d2d;
+    --accent-blue: #007acc;
+    --accent-hover: #1f8ad2;
+    --success-green: #28a745;
+    --error-red: #f48771;
+    --text-main: #cccccc;
+    --text-muted: #858585;
+    --border-color: #3c3c3c;
+    --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-code: 'Fira Code', 'Source Code Pro', monospace;
+    --header-height: 35px;
+    --status-height: 22px;
+    --activity-width: 48px;
+    --radius: 2px;
+}
+
+@media (prefers-color-scheme: light) {
+     :root {
+        --bg-main: #ffffff;
+        --bg-sidebar: #f3f3f3;
+        --bg-header: #eeeeee;
+        --bg-activity: #2c2c2c;
+        --bg-panel-header: #f8f8f8;
+        --accent-blue: #005fb8;
+        --text-main: #333333;
+        --text-muted: #616161;
+        --border-color: #e5e5e5;
+    }
+}

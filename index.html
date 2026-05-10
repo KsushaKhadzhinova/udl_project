@@ -31,7 +31,7 @@
                 </ul>
             </nav>
 
-            <div class="ide-header__breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <div class="ide-header__meta" itemscope itemtype="https://schema.org/BreadcrumbList">
                 <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="#"><span itemprop="name">projects</span></a>
                 <meta itemprop="position" content="1">
@@ -63,7 +63,7 @@
                     <h3 class="ide-panel__title">UDL EDITOR</h3>
                     <div class="ide-panel__content" itemprop="softwareHelp" itemscope itemtype="https://schema.org/CreativeWork">
                         <label for="udl-textarea" class="visually-hidden">Поле ввода кода диаграммы</label>
-                        <textarea id="udl-textarea" class="ide-textarea" spellcheck="false">node A "System Start"
+                        <textarea id="udl-textarea" class="ide-textarea" spellcheck="false" placeholder="node A 'Start'...">node A "System Start"
 node B "System End"
 edge A -> B "Data Flow"</textarea>
                     </div>
@@ -97,9 +97,9 @@ Waiting for input...</pre>
         <section class="ide-documentation" itemscope itemtype="https://schema.org/FAQPage">
             <h2 class="ide-documentation__title">Справка по системе</h2>
             <article class="ide-faq-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                <h3 itemprop="name" class="ide-faq-item__q">Как экспортировать диаграмму?</h3>
+                <h3 itemprop="name" class="ide-faq-item__q">Как запустить рендеринг?</h3>
                 <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                    <div itemprop="text" class="ide-faq-item__a">Используйте меню Файл -> Экспорт в PNG/SVG.</div>
+                    <div itemprop="text" class="ide-faq-item__a">Нажмите кнопку Run на верхней панели инструментов или используйте горячие клавиши Ctrl+Enter.</div>
                 </div>
             </article>
         </section>
@@ -116,7 +116,7 @@ Waiting for input...</pre>
             <div class="ide-status-bar__right">
                 <span class="ide-status-item">UTF-8</span>
                 <span class="ide-status-item">Ln 1, Col 1</span>
-                <span class="ide-status-item ide-status-item--lang">UDL Language</span>
+                <span class="ide-status-item ide-status-item--accent">UDL Language</span>
             </div>
         </footer>
     </div>
