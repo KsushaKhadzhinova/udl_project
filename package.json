@@ -1,0 +1,30 @@
+{
+  "name": "udl_project",
+  "version": "1.0.0",
+  "description": "**CASE-средство для визуального моделирования.**",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KsushaKhadzhinova/udl_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KsushaKhadzhinova/udl_project/issues"
+  },
+  "homepage": "https://github.com/KsushaKhadzhinova/udl_project#readme",
+  "dependencies": {
+    "lodash": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
